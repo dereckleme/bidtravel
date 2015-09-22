@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-language" content="pt-br">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="@paulobaronista">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" media="screen">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <title>Bid Travel - Destinos</title>
+
+    <script type="text/javascript">
+     $(document).ready(function(){
+      $(".nav-button").click(function () {
+      $(".nav-button").toggleClass("open");
+      });    
+     });
+    </script>
+
+    <script type="text/javascript">
+     $(document).ready(function(){
+      $(".bt-form-pesquisa").click(function () {
+      $(".box-form-pesquisa").slideDown("slow");
+      });    
+     });
+    </script>
+
+    <script type="text/javascript">
+     $(document).ready(function(){
+      $(".bt-form-pesquisa-voltar").click(function () {
+      $(".box-form-pesquisa").slideUp("slow");
+      });    
+     });
+    </script>
+
+     <script type="text/javascript">
+     $(document).ready(function(){
+      $(".abrir-info").on("click",function() {
+      $('#row-lance-destinos').fadeOut(100);
+      $('#row-info-destinos').fadeIn((2000));
+      return false;
+      })    
+     });
+    </script>
+
+    <script type="text/javascript">
+     $(document).ready(function(){
+      $("#trocar-pontos").on("click",function() {
+      $('.tr-pontos-juntar-trocar').fadeOut(100);
+      $('.tr-pontos-empresas').fadeIn((2000));
+      return false;
+      })    
+     });
+    </script>
+
+
+    
+  </head>
+  <body>
+
+   <!--  MENU -->
+   <header>
+     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+       <div class="container">
+     
+         <div class="navbar-header">
+            <button type="button" class="nav-button" data-toggle="collapse" data-target=".navbar-collapse">Toggle Navigation</button>
+
+            <form class="form-pesquisa">
+              <button class="bt-form-pesquisa" type="button" title="Pesquisar">Pesquisar</button>
+
+              <div class="box-form-pesquisa">
+                <button class="bt-form-pesquisa-voltar" type="button" title="Voltar">Voltar</button>
+                <input type="text" class="form-pesquisa-topo" placeholder="Pesquisar...">
+              </div>
+            </form> 
+
+            <div class="box-voltar-interno-topo">
+              <button class="bt-voltar-interno-topo" type="button" title="Voltar">Voltar</button>
+              <figure>
+                <img src="imagens/logo-bidtravel-interno-topo.png" class="img-responsive" alt="BidTravel - Dando asas para você voar longe">
+              </figure>
+            </div>
+         </div>
+     
+         <div class="navbar-collapse collapse">
+           <div class="navbar-close" title="Fechar">
+           </div>
+           <ul class="nav navbar-nav navbar-left">
+            <div class="box-nav">
+              <p><strong>Olá visitante</strong>, conecte-se e 
+              aproveite nosso aplicativo.</p>
+              <button type="button" class="btn btn-block bt-background-conectar bt-cr-conta-conectar">conectar</button>
+
+            </div>
+            <li class="active"><a class="bk-inicio" href="index.html" title="Início">Início</a></li>
+            <li><a href="destinos.html" title="Meus Lances">Meus Lances</a></li>
+            <li><a href="criar_conta.html" title="Meu Cadastro">Meu Cadastro</a></li>
+            <li><a href="#" title="Senhas">Senhas</a></li>
+            <li><a href="#" title="Ajuda">Ajuda</a></li>
+            <li><a class="bk-configuracoes" href="#" title="Configurações">Configurações</a></li>
+           </ul>
+         </div>
+
+       </div>
+     </div>
+   </header>
+   <!-- MENU -->
+
+
+<!-- DESTINOS -->
+  <div class="destinos">
+    <nav>
+      <ul>
+        <li class="active"><a data-toggle="tab" href="#tab-destinos">Destinos</a></li>
+        <li><a data-toggle="tab" href="#tab-movimentacao">Movimentação</a></li>
+        <li><a data-toggle="tab" href="#tab-trocar-pontos">Trocar Pontos</a></li>
+        <li><a data-toggle="tab" href="#tab-token">Token</a></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+
+      <div class="tab-content">
+
+        <!-- DESTINOS -->
+        <div id="tab-destinos" class="tab-pane fade in active">
+            
+            <!-- row PAGINA DE LANCES -->
+            <div id="row-lance-destinos" class="row">
+
+              <!-- col-md-4 -->
+              <div class="col-md-4">
+
+                <span class="col-md-4-span-01">
+                 <img src="imagens/coringa.png" class="img-circle" alt="Usuário">
+                </span>
+
+                <span class="col-md-4-span-02">
+                 <a class="tt-destinos-01 abrir-info" href="">Nova York</a><br/>
+                 <p class="tt-destinos-02">Início do Leilão:</p><br/>
+                 <p class="tt-destinos-03">23/12/14 - 10h00</p><br/>
+                 <p class="tt-destinos-05">Tempo:</p><br/>
+                 <p class="tt-destinos-06">00:59:04</p>
+                </span>
+
+                <span class="col-md-4-span-03">
+                 <button type="button" class="bt-lance btn">Dar Lance</button>
+                </span>
+
+              </div>
+              <!-- col-md-4 -->
+
+              <!-- col-md-4 -->
+              <div class="col-md-4">
+
+                <span class="col-md-4-span-01">
+                 <img src="imagens/coringa.png" class="img-circle" alt="Usuário">
+                </span>
+
+                <span class="col-md-4-span-02">
+                 <a class="tt-destinos-01 abrir-info" href="">Nova York</a><br/>
+                 <p class="tt-destinos-02">Início do Leilão:</p><br/>
+                 <p class="tt-destinos-03">23/12/14 - 10h00</p><br/>
+                 <p class="tt-destinos-05">Tempo:</p><br/>
+                 <p class="tt-destinos-06">00:59:04</p>
+                </span>
+
+                <span class="col-md-4-span-03">
+                 <button type="button" class="bt-lance btn">Dar Lance</button>
+                </span>
+
+              </div>
+              <!-- col-md-4 -->
+
+            </div>
+            <!-- row PAGINA DE LANCES -->
+
+
+             <!-- row INFORMAÇÕES DOS DESTINOS -->
+            <div id="row-info-destinos" class="row">
+
+              <!-- col-sm-12 -->
+              <div class="col-sm-12">
+
+               <img src="imagens/new-york.jpg" class="img-rounded" alt="Cinque Terre" width="100%" height="150">
+
+               <p class="tt-destinos-07">08/20</p>
+
+               <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                  <div class="item active">
+                    <img src="imagens/new-york2.jpg" alt="Cinque Terre" class="img-rounded">
+                  </div>
+
+                  <div class="item">
+                    <img src="imagens/new-york3.jpg" alt="Cinque Terre" class="img-rounded">
+                  </div>
+                    
+                  <div class="item">
+                    <img src="imagens/new-york2.jpg" alt="Cinque Terre" class="img-rounded">
+                  </div>
+
+                  <div class="item">
+                    <img src="imagens/new-york3.jpg" alt="Cinque Terre" class="img-rounded">
+                  </div>
+                </div>
+
+                  <!-- Left and right controls -->
+                  <a class="left carousel-control carousel-control-left" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="right carousel-control carousel-control-right" href="#myCarousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+               </div>
+              
+              </div>
+              <!-- col-sm-12 -->
+
+              <!-- col-sm-12 -->
+              <div class="info-destinos-local">
+                <p class="tt-destinos-08">Informações do Local:</p>
+                <div class="col-sm-12 bd-d-local">
+                  <p class="tt-destinos-09">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet perferendis optio odit autem ea quasi, praesentium dolorum quam. Vitae deserunt sunt, dolore iste ducimus? Distinctio soluta officia perferendis labore consectetur.</p>
+                </div>
+
+                <p class="tt-destinos-08">Principais Pontos Turísticos:</p>
+                <div class="col-sm-12 bd-d-local">
+                  <ul>
+                    <li class="tt-destinos-09">Lorem Ipsum é simplesmente uma.</li>
+                    <li class="tt-destinos-09">Lorem Ipsum é simplesmente uma.</li>
+                    <li class="tt-destinos-09">Lorem Ipsum é simplesmente uma.</li>
+                    <li class="tt-destinos-09">Lorem Ipsum é simplesmente uma.</li>
+                    <li class="tt-destinos-09">Lorem Ipsum é simplesmente uma.</li>
+                    <li class="tt-destinos-09">Lorem Ipsum é simplesmente uma.</li>
+                    <li class="tt-destinos-09">Lorem Ipsum é simplesmente uma.</li>
+                    <li class="tt-destinos-09">Lorem Ipsum é simplesmente uma.</li>
+                    <li class="tt-destinos-09">Lorem Ipsum é simplesmente uma.</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- col-sm-12 -->
+
+            </div>
+            <!-- row INFORMAÇÕES DOS DESTINOS -->
+
+        </div>
+        <!-- DESTINOS -->
+
+        <!-- MOVIMENTAÇÃO -->
+        <div id="tab-movimentacao" class="tab-pane fade">
+
+            <!-- row -->
+            <div class="row">
+
+              <!-- col-md-4 -->
+              <div class="col-md-4">
+                <p class="tt-movimentacao-01">Seu saldo atual é:</p>
+                <p class="tt-movimentacao-02">10.904,00 lances</p>
+                <p class="tt-movimentacao-03">Atualizado em 07/10/2015 - 13:48</p>
+                <p class="tt-movimentacao-04">04/07/2015</p>
+
+              </div>
+              <!-- col-md-4 -->
+
+              <!-- col-md-4 -->
+              <div class="col-md-4">
+
+                <div class="col-md-4-span-04">
+                 <p class="tt-movimentacao-05">Extra <br/>CNOVA Comércio Eletrônico</p>
+                 <p class="tt-movimentacao-06">www.extra.com.br</p>
+                 <p class="tt-movimentacao-07">Você trocou <strong>2500 Milhas</strong> de viagem por</p> 
+                 <p class="tt-movimentacao-08">150 Lances Bidtravel.</p>
+                </div>
+
+                <div class="col-md-4-span-05">
+                  <p class="tt-movimentacao-09">150</p>
+                  <p class="tt-movimentacao-10">Lances</p>
+                </div>
+
+              </div>
+              <!-- col-md-4 -->
+
+              <!-- col-md-4 -->
+              <div class="col-md-4">
+
+                <div class="col-md-4-span-04">
+                 <p class="tt-movimentacao-05">Extra <br/>CNOVA Comércio Eletrônico</p>
+                 <p class="tt-movimentacao-06">www.extra.com.br</p>
+                 <p class="tt-movimentacao-07">Você trocou <strong>2500 Milhas</strong> de viagem por</p> 
+                 <p class="tt-movimentacao-08">150 Lances Bidtravel.</p>
+                </div>
+
+                <div class="col-md-4-span-05">
+                  <p class="tt-movimentacao-09">150</p>
+                  <p class="tt-movimentacao-10">Lances</p>
+                </div>
+
+              </div>
+              <!-- col-md-4 -->
+
+              <!-- col-md-4 -->
+              <div class="col-md-4">
+
+                <div class="col-md-4-span-04">
+                 <p class="tt-movimentacao-05">Extra <br/>CNOVA Comércio Eletrônico</p>
+                 <p class="tt-movimentacao-06">www.extra.com.br</p>
+                 <p class="tt-movimentacao-07">Você trocou <strong>2500 Milhas</strong> de viagem por</p> 
+                 <p class="tt-movimentacao-08">150 Lances Bidtravel.</p>
+                </div>
+
+                <div class="col-md-4-span-05">
+                  <p class="tt-movimentacao-09">150</p>
+                  <p class="tt-movimentacao-10">Lances</p>
+                </div>
+
+              </div>
+              <!-- col-md-4 -->
+
+            </div>
+            <!-- row -->
+
+        </div>
+        <!-- MOVIMENTAÇÃO -->
+         
+        <!-- TROCAR PONTOS -->
+        <div id="tab-trocar-pontos" class="tab-pane fade">
+         
+         <div class="row">
+          
+          <!-- col-md-4 -->
+          <div class="col-md-4 tr-pontos">
+           <p class="tr-pontos-txt-01">Você possui <strong>4.500 pontos</strong> de cartão de crédito</p>
+           <p class="tr-pontos-txt-02" style="margin-bottom: 18px">Atualizado em 07/10/2015 - 13:48</p>
+           <p class="tr-pontos-txt-02">Digite abaixo quantos pontos você quer trocar por <strong>Lances Bidtravel</strong>.</p>
+          
+           <span class="box-tr-pontos">
+            <input type="text" class="form-control" placeholder="45">
+            <button type="button" class="btn">Trocar Pontos</button>
+           </span>
+
+           <p class="tr-pontos-txt-01"><strong>Seu saldo atual é de:</strong></p>
+           <p class="tr-pontos-txt-03"><strong><span class="tr-pontos-txt-dl">10.904,00</span>  lances Bidtravel</strong></p>
+           
+           <p class="tr-pontos-txt-02">Atualizado em 07/10/2015 - 13:48</p>
+
+           <p class="tr-pontos-txt-01" style="margin-top: 30px"><strong>Juntar todos os seus pontos</strong></p>
+
+          </div>
+          <!-- col-md-4 -->
+
+          <!-- col-md-4 -->
+          <div class="col-md-4 tr-pontos-juntar-trocar">
+
+            <div class="box-tr-pontos02">
+              <img src="imagens/logo-americanexpress.jpg" alt="American Express" class="img-circle">
+            </div>
+
+            <div class="box-tr-pontos03">
+             <p><a id="trocar-pontos" href="" title="Clique aqui">Clique aqui</a> e saiba como transferir os 
+             pontos dos seus cartões American 
+             Express para a Bidtravel.</p>
+            </div>
+          
+          </div>
+          <!-- col-md-4 -->
+
+          <!-- col-md-4 -->
+          <div class="col-md-4 tr-pontos-juntar-trocar">
+
+            <div class="box-tr-pontos02">
+              <img src="imagens/logo-americanexpress.jpg" alt="American Express" class="img-circle">
+            </div>
+
+            <div class="box-tr-pontos03">
+             <p><a href="" title="Clique aqui">Clique aqui</a> e saiba como transferir os 
+             pontos dos seus cartões American 
+             Express para a Bidtravel.</p>
+            </div>
+          
+          </div>
+          <!-- col-md-4 -->
+
+          <!-- col-md-4 -->
+          <div class="col-md-4 tr-pontos-empresas">
+           
+           <div class="tr-pontos-box-empresas">
+
+            <div class="box-tr-pontos02">
+              <img src="imagens/logo-americanexpress.jpg" alt="American Express" class="img-circle">
+            </div>
+
+            <div class="box-tr-pontos03">
+             <p class="">Transfira os pontos dos seus cartões American Express para a Bidtravel.</p>
+            </div>
+
+           </div>
+
+            <p class="tr-pontos-box-passos-txt1">Passo a passo</p>
+
+            <div class="tr-pontos-box-passos01">
+             <p>1</p>
+            </div>
+
+            <div class="tr-pontos-box-passos02">
+             <p class="tr-pontos-box-passos-txt3 ">Acesse <a href="">www.americanexpress.com.br/rewards</a>
+             ou ligue para <strong>4004-2639</strong> (Capitais e regiões metropolitanas) ou <strong>0800 726 2639</strong> (Demais localidades) e solicite a transferência.</p>
+            </div>
+
+            <p class="tr-pontos-box-passos-txt2">Os pontos do Membership Rewards, o programa de recompensas internacional da American Expresss, se transformam em pontos para que você possa trocar por lances Bidtravel.</p>
+          
+          </div>
+          <!-- col-md-4 -->
+
+
+         </div> <!-- row -->
+
+        </div>
+        <!-- TROCAR PONTOS -->
+
+        <!-- TOKEN --> 
+        <div id="tab-token" class="tab-pane fade">
+         
+         <!-- row -->
+            <div class="row">
+            
+              <!-- col-md-4 -->
+              <div class="col-md-4">
+
+               <p class="tt-token-00">Código de Autorização</p>
+               <p class="tt-token-01">O Token é o  gerandor de Códigos de Autorização.</p>
+               <span class="tt-box-token">
+               <p class="tt-token-02">543897</p>
+               <p class="tt-token-03">00:30</p>
+               </span>
+              </div>
+              <!-- col-md-4 -->
+
+              <!-- col-md-4 -->
+              <div class="col-md-4">
+               <p class="tt-token-00">Código de Autorização</p>
+               <p class="tt-token-01">O Token é o  gerandor de Códigos de Autorização.</p>
+               <span class="tt-box-token">
+               <p class="tt-token-02">98577</p>
+               <p class="tt-token-03">18:45</p>
+               </span>
+              </div>
+              <!-- col-md-4 -->
+
+              <p class="tt-token-04">Utilize o código acima, sempre que solicitado ao realizar suas transações.</p>
+
+            </div>
+            <!-- row -->
+
+        </div>
+        <!-- TOKEN -->
+
+      </div>
+    </div>
+        <div class="idiomas">
+          <div class="container bg-rodape-destinos">
+            <a href="">Português</a> | <a href="">English</a> | <a href="">Español</a> | <a href="">Mais...</a>
+          </div>
+        </div>
+  </div>
+
+
+<!-- DESTINOS -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

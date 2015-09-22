@@ -29,22 +29,5 @@ class Module
     						return $caminho;
     					},
     			));
-    }					
-    public function onBootstrap($e)
-    {
-       
-        $e->getApplication()->getEventManager()->attach('render', function($e) {
-        	/*
-    		 * title's
-    		 */
-            $matches    = $e->getRouteMatch()->getMatchedRouteName();
-    		$viewHelperManager = $e->getApplication()->getServiceManager()->get('viewHelperManager');
-    		$headTitleHelper   = $viewHelperManager->get('headTitle');
-    		$siteName   = 'Bidtravel Brasil';
-    		$headTitleHelper->setSeparator(' - ');
-    		$headTitleHelper->append($siteName);
-    		if($matches == "home") $headTitleHelper->append("Pagina Inicial");
-        }, 100);
-      
     }
 }

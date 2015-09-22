@@ -8,48 +8,6 @@
  */
 namespace Usuario;
 return array(
-    'router' => array(
-        'routes' => array(  
-             'Usuario' => array(
-                'type'    => 'Literal',
-                'options' => array(
-                    'route'    => '/actionUser',
-                    'defaults' => array(
-                        '__NAMESPACE__' => 'Usuario\Controller',
-                        'controller'    => 'Usuario',
-                        'action'        => 'index',
-                    ),
-                ),
-                'may_terminate' => true,
-                'child_routes' => array(
-                    'UsuarioAction' => array(
-                        'type'    => 'Segment',
-                        'options' => array(
-                            'route'    => '/[:controller[/:action]]',
-                            'constraints' => array(
-                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                                'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
-                            ),
-                            'defaults' => array(
-                            ),
-                        ),
-                    ),
-                ),
-            ),
-            'cadastro-rest' => array(
-            		'type' => 'Segment',
-            		'options' => array(
-            				'route' => '/api/Cadastro[/:id]',
-            				'constraints' => array(
-            						'id' => '[0-9]+'
-            				),
-            				'defaults' => array(
-            						'controller' => 'Usuario\Controller\CadastroRest'
-            				)
-            		)
-            ),
-        ),
-    ),
     'service_manager' => array(
         'abstract_factories' => array(
             'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
@@ -67,23 +25,6 @@ return array(
                 'base_dir' => __DIR__ . '/../language',
                 'pattern'  => '%s.mo',
             ),
-        ),
-    ),
-    'controllers' => array(
-        'invokables' => array(
-            'Usuario\Controller\Usuario' => 'Usuario\Controller\UsuarioController',
-            'Usuario\Controller\Login' => 'Usuario\Controller\LoginController',
-            'Usuario\Controller\CadastroRest' => 'Usuario\Controller\CadastroRestController'
-        ),
-    ),
-    'view_manager' => array(
-        'display_not_found_reason' => true,
-        'display_exceptions'       => true,
-        'doctype'                  => 'HTML5',
-        'not_found_template'       => 'error/404',
-        'exception_template'       => 'error/index',
-        'template_path_stack' => array(
-            __DIR__ . '/../view',
         ),
     ),
     // Placeholder for console routes

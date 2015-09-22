@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-language" content="pt-br">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="@paulobaronista">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" media="screen">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <title>Bid Travel - Criar Conta</title>
+
+    <script type="text/javascript">
+     $(document).ready(function(){
+      $(".nav-button").click(function () {
+      $(".nav-button").toggleClass("open");
+      });    
+     });
+    </script>
+
+    <script type="text/javascript">
+     $(document).ready(function(){
+      $(".bt-form-pesquisa").click(function () {
+      $(".box-form-pesquisa").slideDown("slow");
+      });    
+     });
+    </script>
+
+    <script type="text/javascript">
+     $(document).ready(function(){
+      $(".bt-form-pesquisa-voltar").click(function () {
+      $(".box-form-pesquisa").slideUp("slow");
+      });    
+     });
+    </script>
+  </head>
+  <body>
+
+   <!--  MENU -->
+   <header>
+     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+       <div class="container">
+     
+         <div class="navbar-header">
+
+            <button type="button" class="nav-button" data-toggle="collapse" data-target=".navbar-collapse">Toggle Navigation</button>
+
+            <form class="form-pesquisa">
+              <button class="bt-form-pesquisa" type="button" title="Pesquisar">Pesquisar</button>
+
+              <div class="box-form-pesquisa">
+                <button class="bt-form-pesquisa-voltar" type="button" title="Voltar">Voltar</button>
+                <input type="text" class="form-pesquisa-topo" placeholder="Pesquisar...">
+              </div>
+            </form> 
+
+            <div class="box-voltar-interno-topo">
+              <button class="bt-voltar-interno-topo" type="button" title="Voltar">Voltar</button>
+              <figure>
+                <img src="imagens/logo-bidtravel-interno-topo.png" class="img-responsive" alt="BidTravel - Dando asas para você voar longe">
+              </figure>
+            </div>
+
+           
+         </div>
+     
+         <div class="navbar-collapse collapse">
+           <div class="navbar-close" title="Fechar">
+           </div>
+           <ul class="nav navbar-nav navbar-left">
+            <div class="box-nav">
+              <p><strong>Olá visitante</strong>, conecte-se e 
+              aproveite nosso aplicativo.</p>
+              <button type="button" class="btn btn-block bt-background-conectar bt-cr-conta-conectar">conectar</button>
+
+            </div>
+            <li class="active"><a class="bk-inicio" href="index.html" title="Início">Início</a></li>
+            <li><a href="destinos.html" title="Meus Lances">Meus Lances</a></li>
+            <li><a href="criar_conta.html" title="Meu Cadastro">Meu Cadastro</a></li>
+            <li><a href="#" title="Senhas">Senhas</a></li>
+            <li><a href="#" title="Ajuda">Ajuda</a></li>
+            <li><a class="bk-configuracoes" href="#" title="Configurações">Configurações</a></li>
+           </ul>
+         </div>
+
+       </div>
+     </div>
+   </header>
+   <!-- MENU -->
+
+
+<!-- CRIAR CONTA -->
+<div class="cr-conta">
+  <div class="container box-site">
+    <div class="form-group">
+
+        <form>
+          <p class="tt-form-cr-conta tt-form-cr-conta-vd">Já é Cadastrado?</p>
+          <p class="txt-form-cr-conta">Conecte-se e aproveite nosso aplicativo.</p>
+
+          <button type="button" class="btn btn-lg btn-block bt-background-conectar bt-cr-conta-conectar">conectar</button>
+
+          <p class="tt-form-cr-conta tt-form-cr-conta-az">Ainda não é Cadastrado?</p>
+          <p class="txt-form-cr-conta">Por favor, complete os seus dados.</p>
+          <small>Todos os campos são obrigatórios.</small>
+
+          <input class="form-control input-lg nome-cr-conta" type="text" placeholder="Nome">
+          <small><a href="#">Digite o seu nome completo</a></small>
+
+          <input class="form-control input-lg" type="text" placeholder="CPF">
+          <small><a href="#">Digite somente os números do seu CPF</a></small>
+
+          <input class="form-control input-lg" type="text" placeholder="E-mail">
+          <small><a href="#">Digite o seu e-mail</a></small>
+
+          <input class="form-control input-lg" type="text" placeholder="Repita o e-mail">
+          <small class="cr-conta-rp-email"><a href="#">Por que pedimos a confirmação do seu e-mail?</a></small>
+
+          <input class="form-control input-lg" type="password" placeholder="Senha">
+          <small><a href="#">A senha deve ter entre 4 e 18 caracteres</a></small>
+
+          <input class="form-control input-lg" type="password" placeholder="Confirmação de Senha">
+          <small><a href="#">Digite novamente sua senha</a></small>
+
+          <button type="button" class="btn btn-lg btn-block bt-cr-conta-cadastrar bt-background-cadastrar">cadastrar</button>
+
+        </form>
+
+    </div>
+  </div>
+        <div class="idiomas">
+          <div class="container">
+            <a href="">Português</a> | <a href="">English</a> | <a href="">Español</a> | <a href="">Mais...</a>
+          </div>
+        </div>
+</div>  
+<!-- CRIAR CONTA -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

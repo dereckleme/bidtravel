@@ -18,7 +18,7 @@ return array(
                     'route'    => '/',
                     'defaults' => array(
                         'controller' => 'Application\Controller\Index',
-                        'action'     => 'index',
+                        'action'     => 'navigation',
                     ),
                 ),
             ),
@@ -33,7 +33,7 @@ return array(
                     'defaults' => array(
                         '__NAMESPACE__' => 'Application\Controller',
                         'controller'    => 'Index',
-                        'action'        => 'index',
+                        'action'        => 'navigation',
                     ),
                 ),
                 'may_terminate' => true,
@@ -83,12 +83,12 @@ return array(
         'display_exceptions'       => true,
         'doctype'                  => 'HTML5',
         'not_found_template'       => 'error/404',
-        'exception_template'       => 'error/index',
+        'exception_template'       => 'error/navigation',
         'template_map' => array(
             'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
-            'application/index/index' => __DIR__ . '/../view/application/index/index.phtml',
+            'application/navigation/navigation' => __DIR__ . '/../view/application/navigation/navigation.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
-            'error/index'             => __DIR__ . '/../view/error/index.phtml',
+            'error/navigation'             => __DIR__ . '/../view/error/navigation.phtml',
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',
