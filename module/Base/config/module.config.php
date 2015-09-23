@@ -1,4 +1,6 @@
 <?php
+namespace Base;
+
 return array(
     'router' => array(
         'routes' => array(
@@ -65,4 +67,32 @@ return array(
         		'ViewJsonStrategy'
         )
     ),
+
+
+	'doctrine' => array(
+		'eventmanager' => array(
+			'orm_default' => array(
+				'subscribers' => array(
+					// pick any listeners you need
+					'Gedmo\Tree\TreeListener',
+					'Gedmo\Timestampable\TimestampableListener',
+					'Gedmo\Sluggable\SluggableListener',
+					'Gedmo\Loggable\LoggableListener',
+					'Gedmo\Sortable\SortableListener'
+				),
+			),
+		),
+		'driver' => array(
+			__NAMESPACE__ . '_driver' => array(
+				'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
+				'cache' => 'array',
+				'paths' => array(__DIR__ . '/../src/' . __NAMESPACE__ . '/Entity')
+			),
+			'orm_default' => array(
+				'drivers' => array(
+					__NAMESPACE__ . '\Entity' => __NAMESPACE__ . '_driver'
+				),
+			),
+		),
+	),
 );
