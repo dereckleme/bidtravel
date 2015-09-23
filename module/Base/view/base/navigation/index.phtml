@@ -60,16 +60,19 @@
 
                 <!-- row PAGINA DE LANCES -->
                 <div id="row-lance-destinos" class="row">
+                    <?php
+                        foreach($this->destinos AS $destino) {
 
-                    <!-- col-md-4 -->
-                    <div class="col-md-4">
+                            ?>
+                            <!-- col-md-4 -->
+                            <div class="col-md-4">
 
                 <span class="col-md-4-span-01">
-                 <img src="<?=$this->basePath('imagens/coringa.png')?>" class="img-circle" alt="Usuário">
+                 <img src="<?=$this->basePath('imagens/'.$destino->getSingleImage())?>" class="img-circle" alt="Usuário">
                 </span>
 
                 <span class="col-md-4-span-02">
-                 <a class="tt-destinos-01 abrir-info" href="">Nova York</a><br/>
+                 <a class="tt-destinos-01 abrir-info" href=""><?=$destino->getCidade()->getNome()?></a><br/>
                  <p class="tt-destinos-02">Início do Leilão:</p><br/>
                  <p class="tt-destinos-03">23/12/14 - 10h00</p><br/>
                  <p class="tt-destinos-05">Tempo:</p><br/>
@@ -80,31 +83,11 @@
                  <button type="button" class="bt-lance btn">Dar Lance</button>
                 </span>
 
-                    </div>
-                    <!-- col-md-4 -->
-
-                    <!-- col-md-4 -->
-                    <div class="col-md-4">
-
-                <span class="col-md-4-span-01">
-                 <img src="<?=$this->basePath('imagens/coringa.png')?>" class="img-circle" alt="Usuário">
-                </span>
-
-                <span class="col-md-4-span-02">
-                 <a class="tt-destinos-01 abrir-info" href="">Nova York</a><br/>
-                 <p class="tt-destinos-02">Início do Leilão:</p><br/>
-                 <p class="tt-destinos-03">23/12/14 - 10h00</p><br/>
-                 <p class="tt-destinos-05">Tempo:</p><br/>
-                 <p class="tt-destinos-06">00:59:04</p>
-                </span>
-
-                <span class="col-md-4-span-03">
-                 <button type="button" class="bt-lance btn">Dar Lance</button>
-                </span>
-
-                    </div>
-                    <!-- col-md-4 -->
-
+                            </div>
+                            <!-- col-md-4 -->
+                            <?php
+                        }
+                    ?>
                 </div>
                 <!-- row PAGINA DE LANCES -->
 

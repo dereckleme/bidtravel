@@ -19,7 +19,13 @@ class NavigationController extends AbstractActionController
 {
     public function indexAction()
     {
-        return new ViewModel();
+        $em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
+
+        $destinos = $em->getRepository('Base\Entity\Passagem')->findAll();
+
+        return new ViewModel(array(
+            'destinos' => $destinos
+        ));
     }
 
     public function cadastroAction()
