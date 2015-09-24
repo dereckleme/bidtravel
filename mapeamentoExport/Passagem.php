@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Passagem
  *
- * @ORM\Table(name="passagem", indexes={@ORM\Index(name="fk_passagem_cidade1_idx", columns={"cidade"}), @ORM\Index(name="fk_passagem_estado1_idx", columns={"estado"}), @ORM\Index(name="fk_passagem_agencia1_idx", columns={"agencia"}), @ORM\Index(name="fk_passagem_categoria1_idx", columns={"categoria"})})
+ * @ORM\Table(name="passagem", indexes={@ORM\Index(name="fk_passagem_cidade1_idx", columns={"cidade"}), @ORM\Index(name="fk_passagem_estado1_idx", columns={"estado"}), @ORM\Index(name="fk_passagem_agencia1_idx", columns={"agencia"}), @ORM\Index(name="fk_passagem_categoria1_idx", columns={"categoria"}), @ORM\Index(name="fk_passagem_leilao1_idx", columns={"leilao"})})
  * @ORM\Entity
  */
 class Passagem
@@ -74,6 +74,16 @@ class Passagem
      * })
      */
     private $estado;
+
+    /**
+     * @var \Leilao
+     *
+     * @ORM\ManyToOne(targetEntity="Leilao")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="leilao", referencedColumnName="idleilao")
+     * })
+     */
+    private $leilao;
 
 
 }

@@ -10,6 +10,7 @@ use Doctrine\Common\Collections\Criteria;
  *
  * @ORM\Table(name="passagem", indexes={@ORM\Index(name="fk_passagem_cidade1_idx", columns={"cidade"}), @ORM\Index(name="fk_passagem_estado1_idx", columns={"estado"}), @ORM\Index(name="fk_passagem_agencia1_idx", columns={"agencia"}), @ORM\Index(name="fk_passagem_categoria1_idx", columns={"categoria"})})
  * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Base\Repository\PassagemRepository")
  */
 class Passagem
 {
@@ -82,6 +83,16 @@ class Passagem
      * @ORM\OneToMany(targetEntity="Imagem", mappedBy="passagem")
      */
     protected $imagens;
+
+    /**
+     * @var \Leilao
+     *
+     * @ORM\ManyToOne(targetEntity="Leilao")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="leilao", referencedColumnName="idleilao")
+     * })
+     */
+    private $leilao;
 
     public function __construct() {
         $this->imagens = new ArrayCollection();
@@ -226,6 +237,22 @@ class Passagem
     public function setImagens($imagens)
     {
         $this->imagens = $imagens;
+    }
+
+    /**
+     * @return \Leilao
+     */
+    public function getLeilao()
+    {
+        return $this->leilao;
+    }
+
+    /**
+     * @param \Leilao $leilao
+     */
+    public function setLeilao($leilao)
+    {
+        $this->leilao = $leilao;
     }
 }
 

@@ -21,7 +21,7 @@ class NavigationController extends AbstractActionController
     {
         $em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
 
-        $destinos = $em->getRepository('Base\Entity\Passagem')->findAll();
+        $destinos = $em->getRepository('Base\Entity\Passagem')->findLeiloes();
 
         return new ViewModel(array(
             'destinos' => $destinos
