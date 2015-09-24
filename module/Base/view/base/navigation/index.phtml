@@ -3,6 +3,17 @@
         $(".nav-button").click(function () {
             $(".nav-button").toggleClass("open");
         });
+
+        <?php
+                        foreach($this->destinos AS $destino) {
+                        $set = \date_format($destino->getLeilao()->getTempoleilao(), 'Y,m-1,d,H,i,s');
+                            ?>
+                        leftTimer = new Date(<?=$set?>);
+                        $('.timerDestinos<?=$destino->getLeilao()->getIdleilao()?>').countdown({until: leftTimer, compact: true,
+                            description: ''});
+        <?php
+                        }
+        ?>
     });
 </script>
 
@@ -62,7 +73,6 @@
                 <div id="row-lance-destinos" class="row">
                     <?php
                         foreach($this->destinos AS $destino) {
-
                             ?>
                             <!-- col-md-4 -->
                             <div class="col-md-4">
@@ -74,9 +84,9 @@
                 <span class="col-md-4-span-02">
                  <a class="tt-destinos-01 abrir-info" href=""><?=$destino->getCidade()->getNome()?></a><br/>
                  <p class="tt-destinos-02">Início do Leilão:</p><br/>
-                 <p class="tt-destinos-03">23/12/14 - 10h00</p><br/>
+                 <p class="tt-destinos-03"><?=\date_format($destino->getLeilao()->getDatainicio(), 'd/m/y H:i')?></p><br/>
                  <p class="tt-destinos-05">Tempo:</p><br/>
-                 <p class="tt-destinos-06">00:59:04</p>
+                 <p class="tt-destinos-06"><i class="timerDestinos<?=$destino->getLeilao()->getIdleilao()?>"></i></p>
                 </span>
 
                 <span class="col-md-4-span-03">
