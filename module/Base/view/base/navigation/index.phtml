@@ -56,9 +56,16 @@
     <nav>
         <ul>
             <li class="active"><a data-toggle="tab" href="#tab-destinos">Destinos</a></li>
+            <?php
+            if($this->auth->hasIdentity())
+            {
+                ?>
             <li><a data-toggle="tab" href="#tab-movimentacao">Movimentação</a></li>
             <li><a data-toggle="tab" href="#tab-trocar-pontos">Trocar Pontos</a></li>
             <li><a data-toggle="tab" href="#tab-token">Token</a></li>
+                <?php
+            }
+            ?>
         </ul>
     </nav>
 
@@ -73,24 +80,31 @@
                 <div id="row-lance-destinos" class="row">
                     <?php
                         foreach($this->destinos AS $destino) {
-                            ?>
-                            <!-- col-md-4 -->
-                            <div class="col-md-4">
+                    ?>
+                    <!-- col-md-4 -->
+                    <div class="col-md-4">
 
                 <span class="col-md-4-span-01">
-                 <img src="<?=$this->basePath('imagens/'.$destino->getSingleImage())?>" class="img-circle" alt="Usuário">
+                 <img src="<?= $this->basePath('imagens/' . $destino->getSingleImage()) ?>" class="img-circle"
+                      alt="Usuário">
                 </span>
 
                 <span class="col-md-4-span-02">
-                 <a class="tt-destinos-01 abrir-info" href=""><?=$destino->getCidade()->getNome()?></a><br/>
+                 <a class="tt-destinos-01 abrir-info" href=""><?= $destino->getCidade()->getNome() ?></a><br/>
                  <p class="tt-destinos-02">Início do Leilão:</p><br/>
-                 <p class="tt-destinos-03"><?=\date_format($destino->getLeilao()->getDatainicio(), 'd/m/y H:i')?></p><br/>
+                 <p class="tt-destinos-03"><?= \date_format($destino->getLeilao()->getDatainicio(), 'd/m/y H:i') ?></p><br/>
                  <p class="tt-destinos-05">Tempo:</p><br/>
-                 <p class="tt-destinos-06"><i class="timerDestinos<?=$destino->getLeilao()->getIdleilao()?>"></i></p>
+                 <p class="tt-destinos-06"><i class="timerDestinos<?= $destino->getLeilao()->getIdleilao() ?>"></i></p>
                 </span>
 
                 <span class="col-md-4-span-03">
-                 <button type="button" class="bt-lance btn">Dar Lance</button>
+                 <a href="<?php
+                 if ($this->auth->hasIdentity()) {
+                     print "#";
+                 } else {
+                     print $this->url('usuario');
+                 }
+                 ?>"><button type="button" class="bt-lance btn">Dar Lance</button></a>
                 </span>
 
                             </div>

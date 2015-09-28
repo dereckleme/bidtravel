@@ -14,8 +14,8 @@ use Zend\View\Model\ViewModel;
 
 class UsuarioController extends AbstractActionController
 {
-    public function cadastro()
+    public function loginAction()
     {
-        die;
+       return new ViewModel();
     }
 }
