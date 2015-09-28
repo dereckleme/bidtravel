@@ -13,18 +13,22 @@ namespace Base\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use Zend\Authentication\AuthenticationService,
+    Zend\Authentication\Storage\Session as SessionStorage;
 
 
 class NavigationController extends AbstractActionController
 {
     public function indexAction()
     {
-        $em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
-
+        $em       = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
         $destinos = $em->getRepository('Base\Entity\Passagem')->findLeiloes();
+        $auth     = new AuthenticationService;
+        $auth->setStorage(new SessionStorage("Usuario"));
 
         return new ViewModel(array(
-            'destinos' => $destinos
+            'destinos' => $destinos,
+            'auth'     => $auth
         ));
     }
 
