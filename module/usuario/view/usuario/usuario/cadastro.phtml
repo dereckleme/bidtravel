@@ -1,0 +1,82 @@
+<?php
+// objeto form contato
+$formContato = $this->form;
+// preparar elementos do formulário
+$formContato->prepare();
+// configurar url formulário
+$formContato->setAttribute('action', $this->url('usuario-cadastro'));
+?>
+<!-- CRIAR CONTA
+<div class="cr-conta">
+    <div class="container box-site">
+        <div class="form-group">
+
+            <form action="<?=$this->url('usuario-cadastro')?>" method="post">
+                <p class="tt-form-cr-conta tt-form-cr-conta-vd">Já é Cadastrado?</p>
+                <p class="txt-form-cr-conta">Conecte-se e aproveite nosso aplicativo.</p>
+
+                <a href="<?=$this->url('usuario-login');?>"><button type="button" class="btn btn-lg btn-block bt-background-conectar bt-cr-conta-conectar">conectar</button></a>
+
+                <p class="tt-form-cr-conta tt-form-cr-conta-az">Ainda não é Cadastrado?</p>
+                <p class="txt-form-cr-conta">Por favor, complete os seus dados.</p>
+                <small>Todos os campos são obrigatórios.</small>
+
+                <input class="form-control input-lg nome-cr-conta" name="nome" type="text" placeholder="Nome">
+                <small><a href="#">Digite o seu nome completo</a></small>
+
+                <input class="form-control input-lg" type="text" name="cpf" placeholder="CPF">
+                <small><a href="#">Digite somente os números do seu CPF</a></small>
+
+                <input class="form-control input-lg" type="text" name="email" placeholder="E-mail">
+                <small><a href="#">Digite o seu e-mail</a></small>
+
+                <input class="form-control input-lg" type="text" name="email_confirm" placeholder="Repita o e-mail">
+                <small class="cr-conta-rp-email"><a href="#">Por que pedimos a confirmação do seu e-mail?</a></small>
+
+                <input class="form-control input-lg" type="password" name="password" placeholder="Senha">
+                <small><a href="#">A senha deve ter entre 4 e 18 caracteres</a></small>
+
+                <input class="form-control input-lg" type="password" name="password_confirm" placeholder="Confirmação de Senha">
+                <small><a href="#">Digite novamente sua senha</a></small>
+
+                <button type="submit" class="btn btn-lg btn-block bt-cr-conta-cadastrar bt-background-cadastrar">cadastrar</button>
+
+            </form>
+
+        </div>-->
+
+<div class="cr-conta">
+    <div class="container box-site">
+        <div class="form-group">
+            <?php echo $this->form()->openTag($formContato) ?>
+            <p class="tt-form-cr-conta tt-form-cr-conta-vd">Já é Cadastrado?</p>
+            <p class="txt-form-cr-conta">Conecte-se e aproveite nosso aplicativo.</p>
+
+            <button type="button" class="btn btn-lg btn-block bt-background-conectar bt-cr-conta-conectar">conectar</button>
+
+            <p class="tt-form-cr-conta tt-form-cr-conta-az">Ainda não é Cadastrado?</p>
+            <p class="txt-form-cr-conta">Por favor, complete os seus dados.</p>
+            <small>Todos os campos são obrigatórios.</small>
+
+            <?=$this->formInput($formContato->get('nome'))?>
+            <small><a href="#">Digite o seu nome completo</a></small>
+            <?=$this->formInput($formContato->get('cpf'))?>
+            <small><a href="#">Digite somente os números do seu CPF</a></small>
+            <?=$this->formInput($formContato->get('email'))?>
+            <small><a href="#">Digite o seu e-mail</a></small>
+            <?=$this->formInput($formContato->get('re_email'))?>
+            <small class="cr-conta-rp-email"><a href="#">Por que pedimos a confirmação do seu e-mail?</a></small>
+            <?=$this->formInput($formContato->get('password'))?>
+            <small><a href="#">A senha deve ter entre 4 e 18 caracteres</a></small>
+            <?=$this->formElementErrors($formContato->get('password'))?>
+            <?=$this->formInput($formContato->get('re_password'))?>
+            <small><a href="#">Digite novamente sua senha</a></small>
+
+            <button type="submit" class="btn btn-lg btn-block bt-cr-conta-cadastrar bt-background-cadastrar">cadastrar</button>
+
+            <?php echo $this->form()->closeTag() ?>
+
+        </div>
+        </div>
+    </div>
+
