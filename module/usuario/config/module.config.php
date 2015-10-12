@@ -11,13 +11,23 @@ namespace Usuario;
 return array(
     'router' => array(
         'routes' => array(
-            'usuario' => array(
+            'usuario-login' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
                     'route'    => '/login',
                     'defaults' => array(
                         'controller' => 'Usuario\Controller\Usuario',
                         'action'     => 'login',
+                    ),
+                ),
+            ),
+            'usuario-cadastro' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/cadastro',
+                    'defaults' => array(
+                        'controller' => 'Usuario\Controller\Usuario',
+                        'action'     => 'cadastro',
                     ),
                 ),
             ),

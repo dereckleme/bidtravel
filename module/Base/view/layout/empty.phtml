@@ -57,7 +57,7 @@
                         <div class="box-nav">
                             <p><strong>Olá visitante</strong>, conecte-se e
                                 aproveite nosso aplicativo.</p>
-                            <button type="button" class="btn btn-block bt-background-conectar bt-cr-conta-conectar">conectar</button>
+                            <a href="<?=$this->url('usuario-login')?>"><button type="button" class="btn btn-block bt-background-conectar bt-cr-conta-conectar">conectar</button></a>
 
                         </div>
                         <li class="active"><a class="bk-inicio" href="<?=$this->url("navegacao")?>" title="Início">Início</a></li>
@@ -76,6 +76,12 @@
 
 
                              <?php echo $this->content; ?>
+
+    <div class="idiomas">
+        <div class="container">
+            <a href="">Português</a> | <a href="">English</a> | <a href="">Español</a> | <a href="">Mais...</a>
+        </div>
+    </div>
 
     </body>
 </html>
