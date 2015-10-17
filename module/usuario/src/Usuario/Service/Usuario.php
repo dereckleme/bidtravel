@@ -11,7 +11,6 @@ class Usuario extends AbstractService{
 		parent::__construct($em);
         $this->entity = "Usuario\Entity\UsuarioUsuarios";
 	}
-	
 }
 
 ?>

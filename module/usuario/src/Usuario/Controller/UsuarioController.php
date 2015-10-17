@@ -22,12 +22,22 @@ class UsuarioController extends AbstractActionController
 
     public function cadastroAction()
     {
-        $formCadastro = new CadastroForm();
+        $formCadastro    = new CadastroForm();
+        $request         = $this->getRequest();
 
-        $request = $this->getRequest();
+        if ($request->isPost())
+        {
+            $formCadastro->setData($request->getPost());
 
-        if ($request->isPost()) {
+            if ($formCadastro->isValid()) {
+                $cadastro = $this->getServiceLocator()->get('Usuario\Service\Cadastro');
+                $cadastro->insert(array(
+                    'nome'  => $request->getPost('nome')
+                ));
 
+
+                die;
+            }
         }
 
         return new ViewModel(array('form' => $formCadastro));

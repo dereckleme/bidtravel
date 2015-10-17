@@ -19,6 +19,16 @@ class CadastroForm extends Form
                 'placeholder' => 'Nome'
             ),
         ));
+
+        $this->add(array(
+            'name' => 'usuario',
+            'attributes' => array(
+                'type'  => 'Text',
+                'class'=>'form-control input-lg',
+                'placeholder' => 'Usuario'
+            ),
+        ));
+
         $this->add(array(
             'name' => 'cpf',
             'attributes' => array(
@@ -29,12 +39,12 @@ class CadastroForm extends Form
         ));
         $this->add(array(
             'name' => 'email',
+            'required' => true,
             'attributes' => array(
                 'type'  => 'Text',
                 'class'=>'form-control input-lg',
                 'placeholder' => 'E-Mail'
             ),
-            'required' => true,
             'filters'  => array(
                 array('name' => 'Zend\Filter\StringTrim'),
             ),

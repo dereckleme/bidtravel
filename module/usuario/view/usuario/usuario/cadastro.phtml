@@ -66,6 +66,8 @@ $formContato->setAttribute('action', $this->url('usuario-cadastro'));
             <small><a href="#">Digite o seu e-mail</a></small>
             <?=$this->formInput($formContato->get('re_email'))?>
             <small class="cr-conta-rp-email"><a href="#">Por que pedimos a confirmação do seu e-mail?</a></small>
+            <?=$this->formInput($formContato->get('usuario'))?>
+            <small><a href="#">Nome do usuário</a></small>
             <?=$this->formInput($formContato->get('password'))?>
             <small><a href="#">A senha deve ter entre 4 e 18 caracteres</a></small>
             <?=$this->formElementErrors($formContato->get('password'))?>
